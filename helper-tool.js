@@ -25,3 +25,4 @@ setTimeout(()=>{window.location = "https://classroom.google.com"},5*60*60*1000)
 window.onblur = function () {
     window.location = "https://classroom.google.com";
 };
+this[atob('X2tyYnI=')] = !0
